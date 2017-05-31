@@ -20,6 +20,7 @@ class Routes {
   }
 
   render(route) {
+    const self = this;
     const line = d3.svg.line()
       .x(function (d) {
         return self._mapService.getProjection()([d.lon, d.lat])[0];
@@ -49,7 +50,6 @@ class Routes {
         .attr('fill', 'none');
     });
   }
-
 }
 
 Routes.routesFactory.$inject = ['dataService', 'mapService'];
